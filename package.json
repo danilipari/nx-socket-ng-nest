@@ -5,7 +5,9 @@
   "scripts": {
     "start:all": "nx run-many --target=serve --projects=socket,nest-socket --parallel",
     "start:socket": "nx serve socket",
-    "start:nest-socket": "nx serve nest-socket"
+    "start:nest-socket": "nx serve nest-socket",
+    "build:all": "nx run-many --target=build --projects=socket,nest-socket --parallel",
+    "build:all:production": "nx run-many --target=build --projects=socket,nest-socket --parallel --configuration=production --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
