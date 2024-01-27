@@ -38,6 +38,13 @@ nx run-many -t <target1> <target2>
 nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
+generate service in angular project socket
+```
+nx generate @nrwl/angular:service services/web-socket --project=socket
+```
+
+
+
 Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
 
 ## Want better Editor Integration?
