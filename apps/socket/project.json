@@ -17,7 +17,12 @@
         "tsConfig": "apps/socket/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/socket/src/favicon.ico", "apps/socket/src/assets"],
-        "styles": ["apps/socket/src/styles.scss"],
+        "styles": [
+          "apps/socket/src/styles.scss",
+          "node_modules/@nebular/theme/styles/prebuilt/default.css",
+          "node_modules/@nebular/theme/styles/prebuilt/dark.css",
+          "node_modules/@nebular/theme/styles/prebuilt/cosmic.css"
+        ],
         "scripts": []
       },
       "configurations": {

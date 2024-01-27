@@ -1,10 +1,9 @@
-<div style="margin-top: 50px;">
-  <button (click)="sendMessage()">Invia Messaggio</button>
-  <p>Messaggi ricevuti:</p>
-  <ul>
-    <li>messaggio x...</li>
-  </ul>
-</div>
+<nb-layout>
+  <nb-layout-header fixed>Dani - Socket</nb-layout-header>
 
-<socket-nx-welcome></socket-nx-welcome>
-<router-outlet></router-outlet>
+  <nb-layout-column>
+    <socket-nx-welcome (message)="sendMessage()"></socket-nx-welcome>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>
