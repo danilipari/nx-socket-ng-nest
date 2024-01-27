@@ -1,4 +1,10 @@
-import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from '@nestjs/common';
+import {
+  ExceptionFilter,
+  Catch,
+  ArgumentsHost,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 
 @Catch()
 export class ErrorHandler implements ExceptionFilter {
@@ -6,13 +12,15 @@ export class ErrorHandler implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest();
-    const status = exception instanceof HttpException
-      ? exception.getStatus()
-      : HttpStatus.INTERNAL_SERVER_ERROR;
+    const status =
+      exception instanceof HttpException
+        ? exception.getStatus()
+        : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    let message = exception instanceof HttpException
-      ? exception.getResponse()
-      : 'Internal server error';
+    let message =
+      exception instanceof HttpException
+        ? exception.getResponse()
+        : 'Internal server error';
 
     switch (status) {
       case HttpStatus.UNAUTHORIZED:

@@ -24,9 +24,7 @@
           "node_modules/@nebular/theme/styles/prebuilt/cosmic.css"
         ],
         "scripts": [],
-        "allowedCommonJsDependencies": [
-          "eva-icons"
-        ]
+        "allowedCommonJsDependencies": ["eva-icons"]
       },
       "configurations": {
         "production": {
@@ -48,10 +46,7 @@
               "with": "apps/socket/src/environments/environment.prod.ts"
             }
           ],
-          "assets": [
-            "apps/socket/src/favicon.ico",
-            "apps/socket/src/assets"
-          ],
+          "assets": ["apps/socket/src/favicon.ico", "apps/socket/src/assets"],
           "optimization": {
             "scripts": true,
             "styles": {

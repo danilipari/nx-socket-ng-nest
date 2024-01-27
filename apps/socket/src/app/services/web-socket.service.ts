@@ -12,14 +12,14 @@ export class WebSocketService {
   constructor() {
     this.socket = io(this.url, {
       withCredentials: true,
-      extraHeaders: {}
+      extraHeaders: {},
     });
 
     this.socket.on('connect', () => {
       console.log('Connected to WebSocket server!');
     });
 
-    this.socket.on('connect_error', (error) => {
+    this.socket.on('connect_error', error => {
       console.error('WebSocket connection error:', error);
     });
   }
@@ -31,8 +31,8 @@ export class WebSocketService {
 
   // Ascolta i messaggi in arrivo dal server
   onMessage(event: string): Observable<unknown> {
-    return new Observable((observer) => {
-      this.socket.on(event, (data) => {
+    return new Observable(observer => {
+      this.socket.on(event, data => {
         observer.next(data);
       });
     });
@@ -44,5 +44,4 @@ export class WebSocketService {
       this.socket.disconnect();
     }
   }
-
 }

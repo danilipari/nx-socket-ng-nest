@@ -19,15 +19,22 @@ export class AppComponent implements OnDestroy {
     private webSocketService: WebSocketService,
     private toastrService: NbToastrService
   ) {
-    this.messageSubscription = this.webSocketService.onMessage('receive_message').subscribe((message: unknown) => {
-      this.toastrService.show('Messaggio ricevuto', `${message}`, { duration: 3_000 });
-    });
+    this.messageSubscription = this.webSocketService
+      .onMessage('receive_message')
+      .subscribe((message: unknown) => {
+        this.toastrService.show('Messaggio ricevuto', `${message}`, {
+          duration: 3_000,
+        });
+      });
   }
 
   sendMessage() {
-    const message = "Hello from Angular@17";
+    const message = 'Hello from Angular@17';
     this.webSocketService.sendMessage('send_message', message);
-    this.toastrService.show('Messaggio inviato', `${message}`, { status: 'control', duration: 2_000 });
+    this.toastrService.show('Messaggio inviato', `${message}`, {
+      status: 'control',
+      duration: 2_000,
+    });
   }
 
   ngOnDestroy() {
